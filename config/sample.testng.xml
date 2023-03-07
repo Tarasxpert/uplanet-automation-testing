@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI-suite">
+	<test name="UI-ui.tests">
+		<classes>
+			<class name="ui.tests.CloudcampaignUiTests"/>
+		</classes>
+	</test>
+</suite>
