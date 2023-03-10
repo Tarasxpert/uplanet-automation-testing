@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
+import static configs.Configs.CLOUDCAMPAIGN_CREDENTIALS_CONFIG;
 
 public class CloudcampaignCRMLoginPage {
     private final SelenideElement emailField = $x("//*[@id=\"email\"]");
@@ -33,5 +34,12 @@ public class CloudcampaignCRMLoginPage {
     @Step("Typing in (correct) email to an unexisting field ('emailtest' instead of 'email')")
     public void inputIncorrectEmailField(String email) {
         incorrectEmailField.setValue(email);
+    }
+
+    public void login() {
+        openPage();
+        inputEmail(CLOUDCAMPAIGN_CREDENTIALS_CONFIG.email);
+        inputPassword(CLOUDCAMPAIGN_CREDENTIALS_CONFIG.password);
+        clickLoginButtton();
     }
 }
