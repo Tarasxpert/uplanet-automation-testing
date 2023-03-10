@@ -8,6 +8,8 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.codeborne.selenide.Configuration;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -17,6 +19,8 @@ import org.testng.annotations.AfterMethod;
 import com.codeborne.selenide.WebDriverRunner;
 import org.yaml.snakeyaml.Yaml;
 
+import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
+import static configs.Configs.CLOUDCAMPAIGN_CREDENTIALS_CONFIG;
 import static java.lang.String.format;
 
 
@@ -45,6 +49,10 @@ public class BrowserStackDriver {
                 new URL(format("https://%s:%s@hub-cloud.browserstack.com/wd/hub", userName, accessKey)), capabilities);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverRunner.setWebDriver(driver);
+        Configuration.baseUrl = CLOUDCAMPAIGN_CREDENTIALS_CONFIG.url;
+        Configuration.reportsFolder = "target/allure-results";
+        driver.manage().window().maximize();
+        addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterMethod(alwaysRun = true)
