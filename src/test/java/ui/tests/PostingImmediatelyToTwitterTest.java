@@ -9,6 +9,7 @@ import ui.pages.CloudcampaignCRMLoginPage;
 import utils.DataGenerator;
 
 import static org.testng.Assert.assertEquals;
+import static utils.DataGenerator.generateString;
 
 public class PostingImmediatelyToTwitterTest extends BrowserStackDriver {
     @Test(description= "Posting immediately to twitter test")
@@ -19,7 +20,7 @@ public class PostingImmediatelyToTwitterTest extends BrowserStackDriver {
         CloudcampaignCRMDashboardPage cloudcampaignCRMDashboardPage = new CloudcampaignCRMDashboardPage();
         cloudcampaignCRMLoginPage.login();
         cloudcampaignCRMDashboardPage.clickPostNowButton();
-        cloudcampaignCRMDashboardPage.inputTextAreaInPostNow(DataGenerator.generateString(10));
+        cloudcampaignCRMDashboardPage.inputTextAreaInPostNow(generateString(10));
         cloudcampaignCRMDashboardPage.clickToTwitterInChooseAccounts();
         cloudcampaignCRMDashboardPage.clickToPublishButton();
         assertEquals(cloudcampaignCRMDashboardPage.getTextFromSuccessTextAfterPublish(),
