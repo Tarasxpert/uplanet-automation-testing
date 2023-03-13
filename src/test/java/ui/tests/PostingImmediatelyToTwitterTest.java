@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import ui.base.BrowserStackDriver;
 import ui.pages.CloudcampaignCRMDashboardPage;
 import ui.pages.CloudcampaignCRMLoginPage;
-import utils.DataGenerator;
 
 import static org.testng.Assert.assertEquals;
 import static utils.DataGenerator.generateString;
