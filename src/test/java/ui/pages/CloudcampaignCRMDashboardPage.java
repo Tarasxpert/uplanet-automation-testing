@@ -4,7 +4,10 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -16,7 +19,8 @@ public class CloudcampaignCRMDashboardPage {
     private final SelenideElement textAreaInPostNow = $x("//textarea[@id=\"content_text_area\"]");
     private final SelenideElement publishButton = $x("//button[@ng-click=" +
             "\"broadcastContent(contentBeingEdited);\"]");
-    private final SelenideElement successTextAfterPublish = $x("//p[@ng-bind=\"broadcastSuccessText\"]");
+    private final SelenideElement successTextAfterPublish = $x("//p[contains" +
+            "(@ng-bind, 'broadcastSuccessText')][not(normalize-space(.)='')]");
     private final ElementsCollection userDropdownMenuButton = $$x("//ul[@id = \"user_settings_menu\"]" +
             "/li/a");
     private final ElementsCollection userInfoList = $$x("//form[@id=\"user_settings_section\"]" +
@@ -44,24 +48,24 @@ public class CloudcampaignCRMDashboardPage {
         postNowButton.click();
     }
 
-    @Step("")
+    @Step("Clicking 'Twitter' button in choose accounts in 'Post now'")
     public void clickToTwitterInChooseAccounts() {
-        chooseAccountList.get(0).click();
+        chooseAccountList.findBy(text("Twitter")).click();
     }
 
-    @Step("")
+    @Step("Clicking 'Publish' button in 'Post now'")
     public void clickToPublishButton() {
         publishButton.click();
     }
 
-    @Step("")
+    @Step("Inputting text in are in 'Post now'")
     public void inputTextAreaInPostNow(String text) {
         textAreaInPostNow.setValue(text);
     }
 
-    @Step("")
+    @Step("Checking if the success text appeared")
     public String getTextFromSuccessTextAfterPublish() {
-        return successTextAfterPublish.getText();
+        return successTextAfterPublish.should(visible, Duration.ofSeconds(30)).getText();
     }
 
     @Step("Checking if the role of account 'admin'")
