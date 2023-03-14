@@ -36,6 +36,7 @@ public class CloudcampaignCRMLoginPage {
         incorrectEmailField.setValue(email);
     }
 
+    @Step("login to CRM")
     public void login() {
         openPage();
         inputEmail(CLOUDCAMPAIGN_CREDENTIALS_CONFIG.email);

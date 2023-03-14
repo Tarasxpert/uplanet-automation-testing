@@ -51,6 +51,7 @@ public class BrowserStackDriver {
         WebDriverRunner.setWebDriver(driver);
         Configuration.baseUrl = CLOUDCAMPAIGN_CREDENTIALS_CONFIG.url;
         Configuration.reportsFolder = "target/allure-results";
+        Configuration.timeout = 60000;
         driver.manage().window().maximize();
         addListener("AllureSelenide", new AllureSelenide());
     }
