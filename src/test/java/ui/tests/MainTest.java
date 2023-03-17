@@ -27,8 +27,11 @@ public class MainTest extends SelenideBaseDriver {
         assertTrue(uranMainPage.divWhatComesOutIsDisplayed());
         System.out.println("Div 'WhatComesOut' found");
         uranMainPage.fulfillName("Example");
+        System.out.println("NameFilled");
         uranMainPage.fulfillEmail("Example@mail.com");
+        System.out.println("email field");
         uranMainPage.fulfillMessage("ExampleMes");
+        System.out.println("Message");
         String pngFileName = screenshot("Site_form");
     }
 }
