@@ -72,9 +72,9 @@ public class UranMainPage {
         Allure.addAttachment("Form Screenshot", new ByteArrayInputStream(screenshot(OutputType.BYTES)));
     }
 
-    @Step("Taking screenshot of footer")
-    public void takescreenshotF() {
-        Allure.addAttachment("Form Screenshot", new ByteArrayInputStream(screenshot(OutputType.BYTES)));
+    @Step("Taking screenshot of full page-scroll {scr_num}")
+    public void takescreenshotF(int scr_num) {
+        Allure.addAttachment("Scroll Screenshot" + scr_num, new ByteArrayInputStream(screenshot(OutputType.BYTES)));
     }
 
     @Step("Footer is displayed")

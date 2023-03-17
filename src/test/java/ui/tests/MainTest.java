@@ -37,12 +37,14 @@ public class MainTest extends SelenideBaseDriver {
         uranMainPage.findFooterText();
         uranMainPage.assertFooterText("© 2006-2023 Uran, All rights reserved");
         System.out.println("Assert passed");
+        int i = 1;
         do {
-            uranMainPage.takescreenshotF();
+            uranMainPage.takescreenshotF(i);
             executeJavaScript("return window.scrollBy(0, 1000);");
+            i++;
             sleep(500);
         } while (!atBottom());
-        //uranMainPage.takescreenshotF();
+        uranMainPage.takescreenshotF(i);
 
 
     }
