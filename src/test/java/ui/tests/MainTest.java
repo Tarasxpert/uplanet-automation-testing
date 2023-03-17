@@ -22,6 +22,8 @@ public class MainTest extends SelenideBaseDriver {
     @Owner("Taras Zelenskyi")
     @Description("Visiting Main page of Uran and checking if all the DIVs are displayed and visible.")
     public void DomTest() {
+        int i = 1;
+
         UranMainPage uranMainPage = new UranMainPage();
         uranMainPage.openPage("https://urancompany.com/");
         assertTrue(uranMainPage.divWhoWeAreIsDisplayed());
@@ -37,13 +39,13 @@ public class MainTest extends SelenideBaseDriver {
         uranMainPage.findFooterText();
         uranMainPage.assertFooterText("© 2006-2023 Uran, All rights reserved");
         System.out.println("Assert passed");
-        int i = 1;
+        sleep(5000);
+        uranMainPage.takescreenshotF(i);
         do {
-            uranMainPage.takescreenshotF(i);
             executeJavaScript("return window.scrollBy(0, 1000);");
-            i++;
-            sleep(500);
+            sleep(100);
         } while (!atBottom());
+        i++;
         uranMainPage.takescreenshotF(i);
 
 
