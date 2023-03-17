@@ -8,7 +8,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static configs.Configs.CLOUDCAMPAIGN_CREDENTIALS_CONFIG;
 
 public class SelenideBaseDriver {
     @BeforeMethod
@@ -19,8 +18,6 @@ public class SelenideBaseDriver {
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
         Configuration.timeout = 60000;
-        System.setProperty("selenide.screenshots", "false");
-        Configuration.baseUrl = CLOUDCAMPAIGN_CREDENTIALS_CONFIG.url;
         Configuration.reportsFolder = "target/allure-results";
         addListener("AllureSelenide", new AllureSelenide());
     }

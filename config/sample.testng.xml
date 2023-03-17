@@ -3,7 +3,7 @@
 <suite name="UI-suite">
 	<test name="UI-ui.tests">
 		<classes>
-			<class name="ui.tests.CloudcampaignUiTests"/>
+			<class name="ui.tests.MainTest"/>
 		</classes>
 	</test>
 </suite>
