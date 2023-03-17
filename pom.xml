@@ -7,7 +7,7 @@
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>selenide-java-browserstack</name>
+	<name>Uran TestUI</name>
 	<url>https://www.github.com/browserstack/selenide-java-browserstack</url>
 
 	<properties>
