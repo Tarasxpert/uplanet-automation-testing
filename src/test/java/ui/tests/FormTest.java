@@ -21,13 +21,14 @@ public class FormTest extends SelenideBaseDriver {
         uranMainPage.openPage("https://urancompany.com/");
         uranMainPage.fulfillName("Example");
         System.out.println("Name Filled");
-        uranMainPage.fulfillEmail("Example@mail.com");
+        uranMainPage.fulfillEmail("2");
         System.out.println("Email Filled");
         uranMainPage.fulfillMessage("ExampleMes");
         System.out.println("Message Filled");
+        uranMainPage.clickSubmit();
+        System.out.println("Submit clicked");
+        sleep(100);
         uranMainPage.takescreenshot();
         System.out.println("Screenshot taken");
-
-
     }
 }

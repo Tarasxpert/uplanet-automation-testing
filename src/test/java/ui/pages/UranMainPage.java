@@ -23,6 +23,7 @@ public class UranMainPage {
     private final SelenideElement formEmail = $(By.id("form-email"));
     private final SelenideElement formMessage = $(By.id("form-message"));
     private final SelenideElement footerText = $x("//*[@id=\"gatsby-focus-wrapper\"]/div/footer/div/div[2]/div[3]/p");
+    private final SelenideElement submitButton = $x("//div//button[@type=\"submit\"]");
 
     @Step("Open main page")
     public void openPage(String url) {open(url);}
@@ -66,6 +67,9 @@ public class UranMainPage {
     public void fulfillMessage(String message) {
         formMessage.setValue(message);
     }
+
+    @Step("Click Submit Button")
+    public void clickSubmit() {submitButton.click();}
 
     @Step("Taking screenshot of form")
     public void takescreenshot() {
