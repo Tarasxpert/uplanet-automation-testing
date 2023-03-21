@@ -1,26 +1,15 @@
 package ui.tests;
 
-import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
-import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
-import org.openqa.selenium.OutputType;
 import org.testng.annotations.Test;
-import ui.base.SelenideBaseDriver;
 import ui.pages.UranMainPage;
 
-import java.io.ByteArrayInputStream;
-
 import static com.codeborne.selenide.Selenide.*;
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-
-public class MainTest extends SelenideBaseDriver {
-
-
-    @Test(description= "Main page UI TEST of https://urancompany.com/", enabled = true)
+public class UranDOMTest {
+    @Test(description= "Uran DOM Test")
     @Owner("Taras Zelenskyi")
     @Description("Visiting Main page of Uran and checking if all the DIVs are displayed and visible.")
     public void DomTest() {
@@ -49,8 +38,5 @@ public class MainTest extends SelenideBaseDriver {
         } while (!atBottom());
         i++;
         uranMainPage.takescreenshotF(i);
-
-
     }
-
 }

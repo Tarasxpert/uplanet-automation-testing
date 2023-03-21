@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Uran UI-suite">
-    <test name="UI tests">
+    <test name="Contact Form Test">
         <classes>
-            <class name="ui.tests.FormTest"/>
+            <class name="ui.tests.UranFormTest"/>
         </classes>
     </test>
 </suite>

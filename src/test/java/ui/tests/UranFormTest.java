@@ -4,15 +4,12 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
-import ui.base.SelenideBaseDriver;
 import ui.pages.UranMainPage;
 
-import static com.codeborne.selenide.Selenide.*;
-import static org.testng.Assert.assertTrue;
+import static com.codeborne.selenide.Selenide.sleep;
 
-public class FormTest extends SelenideBaseDriver {
-
-    @Test(description= "'Ping Us' form TEST of https://urancompany.com/", enabled = true)
+public class UranFormTest {
+    @Test(description= "Uran Contact Form Test")
     @Owner("Taras Zelenskyi")
     @Description("Fulfilling main page form 'Ping Us' and checking if .... (this will be next task)")
     @Link("https://urancompany.com/")
