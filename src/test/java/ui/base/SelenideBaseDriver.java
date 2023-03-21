@@ -15,7 +15,7 @@ public class SelenideBaseDriver {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
-        Configuration.browserSize = "1366x768";
+        Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
         Configuration.timeout = 60000;
         Configuration.reportsFolder = "target/allure-results";
